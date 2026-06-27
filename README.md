@@ -37,3 +37,63 @@ plt.savefig('average_monthly_charges_churnstatus.png', dpi=300, bbox_inches='tig
 plt.show()
 ```
 ![average_monthly_charges_churnstatus](https://github.com/user-attachments/assets/9a389d8e-d0b3-414e-8651-249731d7e365)
+
+**observation:** Customers with higher monthly charges were more likely to churn
+
+### MONTHLY REVENUE LOSS DUE TO CHURN
+
+```python
+
+churned_customers = df[df["Churn"] == "Yes"]
+
+revenue_lost = churned_customers["MonthlyCharges"].sum()
+revenue_lost
+```
+
+### REVENUE LOST BY CONTRACT TYPE
+
+```python
+
+contract_revenue_loss = (
+    churned_customers.groupby("Contract")
+    ["MonthlyCharges"]
+    .sum()
+    .reset_index()
+    .sort_values(by="MonthlyCharges",
+                 ascending=False)
+)
+contract_revenue_loss
+```
+
+### Revenue loss by internet service
+
+```python
+
+internet_revenue_loss = (
+    churned_customers.groupby("InternetService")
+    ["MonthlyCharges"]
+    .sum()
+    .reset_index()
+    .sort_values(by="MonthlyCharges",
+                 ascending=False)
+)
+internet_revenue_loss
+```
+
+### Indentification of high value churn
+
+```python
+
+high_value_churned=churned_customers[churned_customers["MonthlyCharges"]>80]
+high_value_churned.head()
+```
+
+## Business Insight
+
+* Month-to-month customers contributed the highest revenue loss.
+
+* Fiber optic users had the highest churn-related revenue leakage.
+
+* High-paying customers showed disproportionately high churn rates.
+
+* Long-term contract customers generated more stable revenue streams
