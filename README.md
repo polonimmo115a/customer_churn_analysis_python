@@ -97,3 +97,22 @@ high_value_churned.head()
 * High-paying customers showed disproportionately high churn rates.
 
 * Long-term contract customers generated more stable revenue streams
+
+
+## Some more Business Observation
+
+### Churned Customer By Payment Method
+
+```python
+
+plt.figure(figsize = (8,4))
+ax=sns.countplot(x="PaymentMethod",data=df,hue="Churn")
+ax.bar_label(ax.containers[0])
+ax.bar_label(ax.containers[1])
+plt.xticks(rotation=45)
+plt.title("Churned Customers by Payment method")
+plt.savefig('churned_customers_by_paymentmethod.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+![churned_customers_by_paymentmethod](https://github.com/user-attachments/assets/f2e17abc-764a-4488-b7b3-612478352592)
