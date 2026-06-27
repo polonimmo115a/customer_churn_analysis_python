@@ -116,3 +116,43 @@ plt.show()
 ```
 
 ![churned_customers_by_paymentmethod](https://github.com/user-attachments/assets/f2e17abc-764a-4488-b7b3-612478352592)
+
+**Observations:** customer is likely to churn when he is using electronic check as a payment method.
+
+### Churn analysis of customers by phoneservice,Multiplelines,Internet Service,online Security,Online Backup,Device Protection,Techsupport,Streaming TV,Streaming
+movies
+
+```python
+
+columns = ['PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 
+           'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
+
+# Number of columns for the subplot grid (you can change this)
+n_cols = 3
+n_rows = (len(columns) + n_cols - 1) // n_cols  # Calculate number of rows needed
+
+# Create subplots
+fig, axes = plt.subplots(n_rows, n_cols, figsize=(15, n_rows * 4))  # Adjust figsize as needed
+
+# Flatten the axes array for easy iteration (handles both 1D and 2D arrays)
+axes = axes.flatten()
+
+# Iterate over columns and plot count plots
+for i, col in enumerate(columns):
+    sns.countplot(x=col, data=df, ax=axes[i], hue = df["Churn"])
+    axes[i].set_title(f'Count Plot of {col}')
+    axes[i].set_xlabel(col)
+    axes[i].set_ylabel('Count')
+
+# Remove empty subplots (if any)
+for j in range(i + 1, len(axes)):
+    fig.delaxes(axes[j])
+
+plt.tight_layout()
+plt.savefig('subplot.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+```
+
+![subplot](https://github.com/user-attachments/assets/ea0539fd-6528-4f68-8292-a669c801f9fc)
+
