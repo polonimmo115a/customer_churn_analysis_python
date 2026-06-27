@@ -156,3 +156,75 @@ plt.show()
 
 ![subplot](https://github.com/user-attachments/assets/ea0539fd-6528-4f68-8292-a669c801f9fc)
 
+**Observations:** The majority of customers who do not churn tend to have services like PhoneService, InternetService (particularly DSL), and OnlineSecurity enabled. For services like OnlineBackup, TechSupport, and StreamingTV, churn rates are noticeably higher when these services are not used or are unavailable.
+
+### Churn Analysis by Contract Type
+
+```python
+
+plt.figure(figsize = (4,4))
+ax=sns.countplot(x="Contract",data=df,hue="Churn")
+ax.bar_label(ax.containers[0])  
+plt.title("Count of Customers by Contract")
+plt.savefig('Count_of_customers_by_contract.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+![Count_of_customers_by_contract](https://github.com/user-attachments/assets/3bce1ec8-97f4-4a2b-8f86-f112c8af12f5)
+
+**Observations:** people who have month to month contract are likely to churn than from those who have 1 or 2 years or contract.
+
+### Analysis of churn through hisplot based on tenure
+
+```python
+
+plt.figure(figsize = (9,4))
+sns.histplot(x='tenure', data=df,bins=72,hue="Churn")
+plt.savefig('histplot_of_tenure.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+![Histogram of Tenure](https://github.com/user-attachments/assets/deee59aa-cfe6-470d-b58a-39fa2b5e9262)
+
+**Observations:** people who have used our service for long time stayed,but the people who have used the service for 1 or 2 months have churned
+
+### Analysis of Churn By Senior Citizen
+
+```python
+
+total_counts = df.groupby('SeniorCitizen')['Churn'].value_counts(normalize=True).unstack() * 100
+
+# Plot
+fig, ax = plt.subplots(figsize=(4, 4))  # Adjust figsize for better visualization
+
+# Plot the bars
+total_counts.plot(kind='bar', stacked=True, ax=ax, color=['#1f77b4', '#ff7f0e'])  # Customize colors if desired
+
+# Add percentage labels on the bars
+for p in ax.patches:
+    width, height = p.get_width(), p.get_height()
+    x, y = p.get_xy()
+    ax.text(x + width / 2, y + height / 2, f'{height:.1f}%', ha='center', va='center')
+
+plt.title('Churn by Senior Citizen (Stacked Bar Chart)')
+plt.xlabel('SeniorCitizen')
+plt.ylabel('Percentage (%)')
+plt.xticks(rotation=0)
+plt.legend(title='Churn', bbox_to_anchor = (0.9,0.9))  # Customize legend location
+plt.savefig('churn_by_senior_citizen_stackedbarchart.png', dpi=300, bbox_inches='tight')
+
+plt.show()
+```
+
+![Churn by Senior Citizen Stacked Bar Chart](https://github.com/user-attachments/assets/8e782c46-b7fc-4654-8689-54f40d2c24d4)
+
+**Observations:** comparitively a greater percentage of people in senior citizen category have churned
+
+
+
+
+
+
+
+
+
