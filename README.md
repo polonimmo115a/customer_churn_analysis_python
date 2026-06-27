@@ -220,6 +220,25 @@ plt.show()
 
 **Observations:** comparitively a greater percentage of people in senior citizen category have churned
 
+### Analysis of Customer Churn by percentage
+
+```python
+
+plt.figure(figsize = (3,4))
+plt.title("Percentage of Churned Customeres", fontsize = 10)
+plt.pie(gb["Churn"], labels=gb.index, autopct="%1.2f%%")
+plt.savefig('percentage_of_churned_customers.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+![Percentage of Churned Customers](https://github.com/user-attachments/assets/587b2202-d0f2-4aa7-9eda-1c292016e48b)
+
+**Observations:** from the given pie chart we conclude that 26.54% customers have churned
+
+
+
+
+
 
 
 
