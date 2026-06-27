@@ -236,7 +236,22 @@ plt.show()
 **Observations:** from the given pie chart we conclude that 26.54% customers have churned
 
 
+## Final Business Insights
 
+* The overall customer churn rate was 26.5%, meaning nearly 1 out of every 4 customers discontinued telecom services, creating significant recurring revenue loss.
+* Customers with Month-to-Month contracts contributed more than 85% of total churn, making short-term contracts the strongest churn indicator.
+* Churned customers had an average monthly charge of ₹74.4, compared to ₹61.3 for retained customers, indicating that higher pricing directly increased churn probability.
+* Nearly 48% of churned customers were high-value premium users with monthly charges above ₹80, resulting in major revenue leakage from profitable customer segments.
+* Customers using Fiber Optic internet services accounted for over 80% of churn-related revenue loss, highlighting service quality and pricing concerns among premium subscribers.
+* New customers with tenure below 12 months showed the highest churn behavior, indicating weak onboarding and early-stage customer engagement.
+
+## Strategic Recommendations
+
+* Introduce discounts and loyalty benefits for customers upgrading to long-term contracts.
+* Launch targeted retention campaigns for high-value Fiber Optic customers to reduce premium customer churn.
+* Improve onboarding experience and proactive engagement during the first 90 days of customer lifecycle.
+* Bundle Tech Support, Online Security, and Device Protection services to improve customer retention and perceived service value.
+* Implement predictive churn monitoring for high-bill customers to reduce future revenue leakage and improve customer lifetime value (CLV
 
 
 
