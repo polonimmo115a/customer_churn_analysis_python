@@ -36,6 +36,4 @@ plt.ylabel("Mean Monthly Charges")
 plt.savefig('average_monthly_charges_churnstatus.png', dpi=300, bbox_inches='tight')
 plt.show()
 ```
-!
-
-
+![average_monthly_charges_churnstatus](https://github.com/user-attachments/assets/9a389d8e-d0b3-414e-8651-249731d7e365)
