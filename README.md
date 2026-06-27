@@ -251,7 +251,7 @@ plt.show()
 * Launch targeted retention campaigns for high-value Fiber Optic customers to reduce premium customer churn.
 * Improve onboarding experience and proactive engagement during the first 90 days of customer lifecycle.
 * Bundle Tech Support, Online Security, and Device Protection services to improve customer retention and perceived service value.
-* Implement predictive churn monitoring for high-bill customers to reduce future revenue leakage and improve customer lifetime value (CLV
+* Implement predictive churn monitoring for high-bill customers to reduce future revenue leakage and improve customer lifetime value (CLV)
 
 
 
